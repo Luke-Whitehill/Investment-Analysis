@@ -3,10 +3,15 @@ import fix_yahoo_finance as yf
 import pandas_datareader.data as pdr
 
 print("Individual Asset Risk and Return")
-exchange = '.AX'
-exchange_code = "^AXJO"
+print('Exchanges to Choose From:')
+xc = ['.AX', '.NYSE']
+print(xc)
+print('Choose your exchange...')
+exchange = input()
 print('Enter your ' + exchange + ' stock....')
 stock = input() + exchange
+
+exchange_code = "^AXJO"
 
 
 def history(stock):
