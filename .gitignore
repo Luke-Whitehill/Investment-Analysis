@@ -1,3 +1,7 @@
 .vscode
 .DS_Store
+<<<<<<< HEAD
 _pycache_
+=======
+_pycache_
+>>>>>>> 9720200da0153cda341860ae598d02eb59d59465
