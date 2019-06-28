@@ -1,4 +1,6 @@
 border = '-' * 20
+
+
 def menus():
     print(border + 'MENU' + border)
     print('1. Risk/Return of Individual Asset')
@@ -7,13 +9,14 @@ def menus():
     print('4. Recent High/Low Open/Close')
     print(border*2+'----')
 
+
 menu = True
 while menu:
     menus()
     key = int(input('Input your choice; '))
 
     if key == 1:
-        print('Enter your stock...')
+        import module1
 
     elif key == 2:
         import module2
