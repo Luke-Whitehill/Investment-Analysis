@@ -9,8 +9,5 @@ for i in stocks:
 print(ones)
 
 stock_data = pdr.get_data_yahoo(stocks)['Adj Close']
-avg_ret = np.average(np.log(stock_data / stock_data.shift(1))*252)
-returns = []
-for i in stocks:
-    returns.append(avg_ret)
-print(returns)
+retvect = np.mean(np.log(stock_data / stock_data.shift(1))*252).tolist()
+print(retvect)
