@@ -7,6 +7,7 @@ def menus():
     print('2. Efficient Frontier')
     print('3. Capital Asset Pricing Model')
     print('4. Recent High/Low Open/Close')
+    print('5. Optimal Asset Weights given required return')
     print(border*2+'----')
 
 
@@ -25,5 +26,7 @@ while menu:
         print('Hello 3')
     elif key == 4:
         import module4
+    elif key == 5:
+        import PortfolioMatrices
     else:
         print('Input invalid try again.')

@@ -20,15 +20,9 @@ stock_data = pdr.get_data_yahoo(stock)['Adj Close']
 # Beta Calculation
 # beta asset = cov (asset return and market return ) / market variance
 exchange_variance = int(
-    mean(np.log(exchange_data / exchange_data.shift(1)))*252)
-stock_return = mean(np.log(stock_data / stock_data.shift(1)))*252)
-covariance=cov(exchange_return, stock_return)
-exchange_variance=var(exchange_data)
-asset_beta=covariance / exchange_variance
+    np.average(np.log(exchange_data / exchange_data.shift(1)))*252)
+stock_return = np.average(np.log(stock_data / stock_data.shift(1))*252)
+covariance = cov(exchange_return, stock_return)
+exchange_variance = var(exchange_data)
+asset_beta = covariance / exchange_variance
 Print("The beta of the asset is:" + asset_beta)
-
-
-Print('Are you finished?')
-menu_status=input()
-if menu_status=["yes", 'Yes', 'ye', 'eys']:
-    import menus
