@@ -1,4 +1,4 @@
-# Portfilo Matrices     #don't forget to add stock prices and how many to purchase given weights
+# Portfilo Matrices     #don't forget to add stock prices and how many to purchase given weights i.e. only whole numbers
 import numpy as np
 import fix_yahoo_finance as yf
 import pandas_datareader as pdr
@@ -22,9 +22,8 @@ retvect = np.matrix((np.mean(ret)*252))
 
 # WEIGHT VECTOR
 weights = np.random.rand(len(stocks))
-weights /= np.sum(weights)
-print('Weights Vector')
-print(weights)
+weights /= np.sum(weights)  # LOOK INTO LAMBDA FUNCTIONS IN PYTHON HEERE TO ELIMINATE SHORT SELLING FOR \
+# THE NORMAL RETAIL INVESTOR
 
 # COVARIANCE MATRIX
 retcov = np.matrix(ret.cov()*252)
@@ -52,5 +51,24 @@ gamma = (A*target_return-B)/delta
 # OPTIMAL WEIGHTS
 optimalweights = np.squeeze(np.asarray(lammbda))*(np.matmul(invretcov, np.matrix.transpose(
     one))) + np.squeeze(np.asarray(gamma))*np.matmul(invretcov, np.matrix.transpose(retvect))
-print('Optimal Weights')
+print('Optimal Portfolio Weights')
 print(optimalweights)
+# ADD COMPANY NAMES TO THIS, MAYBE REMOVE ALL THE NP.MATRIX PARTS?
+
+# OPTIMAL VARIANCE
+optimalvariance = np.matmul(np.matrix.transpose(
+    optimalweights), np.matmul(retcov, optimalweights))
+print('Optimal Portfolio Variance')
+print(optimalvariance)
+
+# GLOBAL MINIMUM  RETURN
+gminret = B/A
+print('Minimum Return with Minimum Variance')
+print('------------------------------------')
+print('Global Minimum Return')
+print(gminret)
+
+# GLOBAL MINIMUM VARIANCE
+gminvar = 1/A
+print('Global Minimum Variance')
+print(gminvar)
