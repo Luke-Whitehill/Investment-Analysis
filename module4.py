@@ -21,3 +21,6 @@ while stock != 'Exit':
     plt.show()
     print('Enter your ' + exchange + ' stock....')
     stock = input() + exchange
+
+# Notes: Make it so its not just recent, graph it in mpl etc evolve into technical analysis. Learn from tkinter?
+print("It's been a while since I did any python programming :( ")
