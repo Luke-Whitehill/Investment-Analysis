@@ -27,6 +27,8 @@ while menu:
     elif key == 4:
         import module4
     elif key == 5:
+        import module5
+    elif key == 6:
         import PortfolioMatrices
     else:
         print('Input invalid try again.')
