@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plot
 from scipy.stats import norm
 import math
 import scipy.stats as stats
@@ -8,22 +7,45 @@ import yfinance as yf
 import numpy as np
 
 stocks = ['EOS.AX']
-data = yf.download(tickers="EOS.AX",
-                   start="2017-01-01", group_by="ticker", interval="1d")  # ['Adj Close']
+data = yf.download(tickers="EOS.AX", start="2017-01-01",
+                   group_by="ticker", interval="1d")  # ['Adj Close']
 
 
+# print(data)
+# Stock Price Graph
 close = data['Adj Close']
 plt.subplot(2, 1, 1)
 plt.plot(close)
 plt.ylabel('Stock price in $')
-print(close)
+# print(close)
+
+# Daily Returns graph - think Time Series Econometrics
 plt.subplot(2, 1, 2)
-rets1 = np.log(close / close.shift(1))
-rets1 = rets1[2:len(rets1)]
+# rets1 = np.log(close / close.shift(1))
+# rets1 = rets1[2:len(rets1)]
 rets = data['Adj Close'].pct_change()
 rets = rets[~np.isnan(rets)]
+rets = np.array(rets)
+print('Returns without dates')
+print(rets)
+# retciupr = np.average(rets)+1.96*(np.std(rets)/len(rets))
+mu = np.average(rets)
+std = np.std(rets)
+n = len(rets)
+cilwr = mu+1.96*std*np.sqrt(1+1/n)
+ciupr = mu-1.96*std*np.sqrt(1+1/n)
+# upr = (np.average(rets))+1.96*(np.std(rets)*np.sqrt(1+(1/len(rets)))
+# retcilwr = np.average(rets)-1.96*(np.std(rets)/len(rets))
+# lwr=(np.average(rets))-(1.96*(np.std(rets)*np.sqrt(1+(1/len(rets)))))
+# retcilwr=(np.average(rets))-1.96*(np.std(rets)*sqrt(1+(1/lenght(rets)))
+plt.axhline(y=cilwr, color='r', linestyle="-")
+plt.axhline(y=ciupr, color='r', linestyle="-")
 plt.plot(rets)
 
+
+# plt.figure(3)
+# plt.plot(retciupr)
+# plt.plot(retcilwr)
 
 # Fit a normal distribution to the data:
 mu, std = norm.fit(rets)
@@ -43,6 +65,7 @@ plt.title(title)
 
 plt.show()
 
+
 """ plt.figure(4)
 # The variable 'rets1' will be our histogram plotting variable.
 
@@ -60,11 +83,10 @@ plt.title(title)
 plt.show() """
 
 
-data_market = yf.download(tickers="^AORD",
-                          start="2015-01-01", group_by="ticker", interval="1d")  # ['Adj Close']
-marketret = data_market['Adj Close'].pct_change()
-marketret = marketret[~np.isnan(marketret)]
-print(marketret)
+# data_market = yf.download(tickers="^AORD", start = "2015-01-01", group_by = "ticker", interval = "1d")  # ['Adj Close']
+# marketret = data_market['Adj Close'].pct_change()
+# marketret = marketret[~np.isnan(marketret)]
+# print(marketret)
 
 
 """ plt.figure(4)
