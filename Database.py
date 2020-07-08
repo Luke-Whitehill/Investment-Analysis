@@ -40,6 +40,7 @@ def yfsqldownload(ticker):
     c = conn.cursor
     data.to_sql('stock_table_'+ticker, con=conn,
                 if_exists='append', index=True)
+    # c.close()
     conn.commit()
     conn.close()
 
@@ -65,6 +66,3 @@ for line in cur.fetchall():
  cur.close()
 engine.close() 
  """
-# https://docs.python.org/3/library/sqlite3.html
-# https://pythontic.com/modules/sqlite/introduction
-# https://www.youtube.com/watch?v=NCc5r7Wr7gg
