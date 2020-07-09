@@ -1,3 +1,4 @@
+# from Database import yfsqldownload
 from scipy.stats import norm
 import math
 import scipy.stats as stats
@@ -5,9 +6,10 @@ from scipy import stats
 import matplotlib.pyplot as plt
 import yfinance as yf
 import numpy as np
+import sqlite3
 
 stocks = ['EOS.AX']
-data = yf.download(tickers="EOS.AX", start="2017-01-01",
+data = yf.download(tickers="IAG.AX", start="2018-03-30",
                    group_by="ticker", interval="1d")  # ['Adj Close']
 
 
@@ -94,3 +96,19 @@ plt.scatter(marketret, rets)
 plt.show()
 corr = stats.pearsonr(marketret, rets)
 print(corr[0]) """
+
+
+# yfsqldownload('BHP.AX')
+
+conn = sqlite3.connect('stockdatabase.db')
+c = conn.cursor()
+select_statement = "SELECT Adj_Close FROM 'stock_table_BHP.AX'"
+c.execute(select_statement)
+rows = c.fetchall()
+# for row in rows:
+# print(row)
+c.close()
+conn.close()
+
+plt.plot(rows)
+plt.show()
