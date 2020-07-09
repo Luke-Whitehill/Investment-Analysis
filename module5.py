@@ -100,6 +100,8 @@ print(corr[0]) """
 
 # yfsqldownload('BHP.AX')
 
+
+# fetching data from sql database
 conn = sqlite3.connect('stockdatabase.db')
 c = conn.cursor()
 select_statement = "SELECT Adj_Close FROM 'stock_table_BHP.AX'"
