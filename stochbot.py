@@ -2,7 +2,7 @@ import talib as ta
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
 import yfinance as yf
-ticker = "MSFT"
+ticker = "MQG.AX"
 aapl = yf.download(ticker, '2017-11-6','2020-11-20', interval = "1d")
 import numpy as np
 
@@ -150,4 +150,6 @@ print('The average profit per trade was ', average_profit*100, '%')
 
 
 plt.show()
+
+#testing github linkage
 
