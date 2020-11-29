@@ -28,40 +28,33 @@ def scrapefgi():
     #print(d[2][25:28])
     #print(d[3][26:29])
     #print(d[4][25:27])
+
+    #removing the letters. The 'prefix' to the letters always stays the same, should also work if single digit fgi
     d[0] = d[0][18:20]
     d[1] = d[1][29:31]
     d[2] = d[2][25:27]
     d[3] = d[3][26:28]
     d[4] = d[4][25:27]
-#print(extract(d))
+
     d = extract(d)
 
-#df = DataFrame(d, columns=['Today','Yesterday','Week','Month','Year'])
-#print(df)
-    df = DataFrame(d).T
-#df = DataFrame(d, columns=['Today','Yesterday','Week','Month','Year'])
+    #df = DataFrame(d, columns=['Today','Yesterday','Week','Month','Year'])
+    #print(df)
+    df = DataFrame(d).T #transposing the the list is a 5x1 not a 1x5
+    #df = DataFrame(d, columns=['Today','Yesterday','Week','Month','Year'])
     df.columns = ['Today','Yesterday','Week','Month','Year']
+    #adding in the column names to reflect the numbers
+    return df
 
+scrapefgi()
 
 
 import sqlite3
 conn = sqlite3.connect('fgi.db')
-df.to_sql('CNN_FGI', con = conn, if_exists = 'append')
+scrapefgi().to_sql('CNN_FGI', con = conn, if_exists = 'append')
 conn.commit()
 conn.close()
 
-import datetime
-
-
-def dynamic_data_entry():
-    unix = time.time()
-    date = str(datetime.datetime.fromtimestamp(
-        unix).strftime('%Y-%m-%d %H:%M:%S'))
-    keyword = 'Python'
-    value = random.randrange(0, 10)
-    c.execute("INSERT INTO stonkdata (unix, datestamp, keyword, value) VALUES (?, ?, ?, ?)",
-              (unix, date, keyword, value))
-    conn.commit()
 
 
 
@@ -84,4 +77,6 @@ def dynamic_data_entry():
     #for j in ['F','e','d','a','r','&','G','N','o','w',':','(',')','x','t','m', 'E']:
         #string = string.replace(j, "")
 #print(int(string))
+
+
 
