@@ -151,5 +151,7 @@ print('The average profit per trade was ', average_profit*100, '%')
 
 plt.show()
 
-#testing github linkage
 
+
+
+#testing changes, i.e. github desktop because there are some branch issues
