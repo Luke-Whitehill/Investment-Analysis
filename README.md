@@ -5,7 +5,7 @@
   <img src="https://github.com/Luke-Whitehill/Investment-Analysis/blob/master/src/Images/PriceDisplay.png" width="1000" height="360"/>
 </p>
 <p align="center">
-  <img src="https://github.com/Luke-Whitehill/Investment-Analysis/blob/master/src/gifs/dashboarddemo.gif" width="1242" height="480"/>
+  <img src="https://github.com/Luke-Whitehill/Investment-Analysis/blob/master/src/gifs/dashboarddemo.gif" width="1242" height="360"/>
 </p>
 
 <p>
