@@ -14,7 +14,7 @@
   Displaying insights and graphs via a terminal output and a matplotlib graph could be more appealing, so I have started to create a dashboard (which is in the gif below) to tastefully display the data I am collecting, the numbers I am calculating and the models I am fitting.
 </p>
 <h2>
-  Dasbhoard
+  Dashboard
 </h2>
 <p align="center">
   <img src="https://github.com/Luke-Whitehill/Investment-Analysis/blob/master/src/gifs/dashboarddemo.gif" width="1242" height="360"/>
@@ -36,5 +36,14 @@
 </p>
 <p>
   The figure of ASX:CSL shows a similar story to ASX:CBA, the optimum buy and sell levels for a default slow stochatic indicator is around buying at 30 and selling at 85. Both graphs show that buying equities at a slow stochastic level of ~30 is better. This could be because of the underlying strategy - only have one open position at a time (i.e. not doubling down or short selling) as well as dip buying based on other indicators.
+</p>
+<p align="center">
+  <img src="https://github.com/Luke-Whitehill/Investment-Analysis/blob/master/src/images/fmgstochoptlarge.png" width="550" height="400"/>
+</p>
+<p>
+  ASX:FMG is similar to ASX:CSL and ASX:CBA in the sense that the buy level is around 33 and the sell level is a bit higher at 94. 
+</p>
+<p>
+  Whilst these graphs are largely similar, they show the need for the optimisation of technical analysis indicators and hope that they apply to future results. A contributing factor to these graphs looking similar is that there could be a lot of institutional algorithms eliminating any TA opportunities in these blue chip stocks. Another reason could be that this TA indicator has been used on a medium-long term timeframe and daily data. Using intraday data could yield different results but this optimisation would be a more severe vitcim of overfitting strategies. 
 </p>
 
