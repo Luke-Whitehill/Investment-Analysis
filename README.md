@@ -1,16 +1,27 @@
 
 <h1 align="center">Dashboard</h1>
 
-<p align="center">
-  <img src="https://github.com/Luke-Whitehill/Investment-Analysis/blob/master/src/Images/PriceDisplay.png" width="1000" height="360"/>
+<h2 align = 'center'>
+  Introduction
+<h2>
+<p>
+  Scraping and downloading data from Yahoo! each time I made a slight change to some code started to get annoying but it worked for the basic financial analysis I was doing. Then, I wanted to make my own custom indicators and store daily scraping results. That worked for a little while until my computer was asleep when the crontab job was scheduled. I faced a problem; "How do I combine my own data and be able to run cronjobs whenever I liked?"
+</p>
+<p>
+  Answer: Buy a Raspberry Pi and make a local server. I could have gone with a Virtual Private Server (VPS) to allow me to remotely work with my data, but a Raspberry Pi allowed me to be more flexible with any future projects. 
+</p>
+<p>
+  Displaying insights and graphs via a terminal output and a matplotlib graph could be more appealing, so I have started to create a dashboard (which is in the gif below) to tastefully display the data I am collecting, the numbers I am calculating and the models I am fitting.
 </p>
 <p align="center">
   <img src="https://github.com/Luke-Whitehill/Investment-Analysis/blob/master/src/gifs/dashboarddemo.gif" width="1242" height="360"/>
 </p>
 
 <p>
-  What is not visible on the dashboard yet is optimisation graphs of select technical analysis indicators. Development on the slow stochastics optimisation function has recently begun. For visual aide, graphs have been included for a 3D dimension, two parameter optimisation. However, to tweak all the calculations for the slow stochastic indicator, around 6 variables (dimensions) need to be tested which cannot be shown. 
+  What has not been added to the dashboard yet is optimisation graphs of select technical analysis indicators. Development on the slow stochastics optimisation function has recently begun. For visual aide, graphs have been included for a 3D dimension, two parameter optimisation. However, to tweak all the calculations for the slow stochastic indicator, around 6 variables (dimensions) need to be tested which cannot be shown. 
 </p>
 <p align="center">
-  <img src="https://github.com/Luke-Whitehill/Investment-Analysis/blob/master/src/images/cbastochopt.png" width="550" height="400"/>
+  <img src="https://github.com/Luke-Whitehill/Investment-Analysis/blob/master/src/images/cbastochoptlarge.png" width="550" height="400"/>
+  The imagine above shows that for ASX:CBA, if only slow stochastics was to be used as buying and selling signals, the optimum bounds are: buy at 39, sell at 77. This will yield a profit of 20.79 per share (not accounting for slippage or taxes). Whilst this is a strategy that does not beat the market, it is interesting to see that the 'textbook' buy at 20 and sell at 80 does not strictly apply for this equity, and a buy at 35, sell at 75 would be better.
 </p>
+
