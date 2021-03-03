@@ -17,7 +17,7 @@
   Dashboard
 </h2>
 <p align="center">
-  <img src="https://github.com/Luke-Whitehill/Investment-Analysis/blob/master/src/gifs/dashboarddemo.gif" width="1242" height="300/>
+  <img src="https://github.com/Luke-Whitehill/Investment-Analysis/blob/master/src/gifs/dashboarddemo.gif" width="1242" height="300"/>
 </p>
 <h3>
   Optimisation of Technical Indicators
